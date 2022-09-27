@@ -11,8 +11,9 @@
     xmlns:animations="using:Microsoft.Toolkit.Uwp.UI.Animations"
     xmlns:iconPacks="using:MahApps.Metro.IconPacks"
     xmlns:strings="using:Ghostly.Uwp.Strings"
-    Background="{ThemeResource RegionBrush}"
-    mc:Ignorable="d">
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
 
     <Page.Resources>
         <converters:InverseBooleanConverter x:Key="InverseBool" />
@@ -119,7 +120,7 @@
                    IsTabStop="False">
 
             <SplitView.Pane>
-                <Grid Background="{ThemeResource RegionBrush}"
+                <Grid 
                       BorderBrush="{ThemeResource RegionBorderBrush}"
                       BorderThickness="0,0,1,0">
 
@@ -151,7 +152,6 @@
                                 DragItemsCompleted="CategoryListView_DragItemsCompleted"
                                 ItemsSource="{x:Bind Navigation.Categories, Mode=OneWay}"
                                 SelectedItem="{x:Bind Navigation.Categories.Selected.Value, Mode=TwoWay}"
-                                ItemContainerStyle="{StaticResource NavigationMenuContainerStyle}"
                                 ItemTemplate="{StaticResource CategoryItemTemplate}">
                                 <controls:NavigationListView.Resources>
                                     <SolidColorBrush x:Key="ListViewItemBackgroundSelected" Color="{ThemeResource SystemListMediumColor}" />
@@ -176,10 +176,8 @@
                             <controls:NavigationListView x:Name="CreateListView"
                                 Grid.Row="3" Margin="0" TabIndex="4"
                                 ShowTopBorder="True"
-                                BorderBrush="{ThemeResource RegionBorderBrush}"
                                 SelectedItem="{x:Bind Navigation.Commands.Selected.Value, Mode=TwoWay}"
                                 ItemsSource="{x:Bind Navigation.Commands, Mode=OneWay}"
-                                ItemContainerStyle="{StaticResource NavigationMenuContainerStyle}"
                                 ItemTemplate="{StaticResource CategoryItemTemplate}">
                                 <controls:NavigationListView.Resources>
                                     <SolidColorBrush x:Key="ListViewItemBackgroundSelected" Color="{ThemeResource NavigationSelectedBrush}" />
@@ -192,10 +190,8 @@
                             <controls:NavigationListView x:Name="MenuListView"
                                 ShowTopBorder="True"
                                 Grid.Row="4" Margin="0" TabIndex="4"
-                                BorderBrush="{ThemeResource RegionBorderBrush}"
                                 SelectedItem="{x:Bind Navigation.Menu.Selected.Value, Mode=TwoWay}"
                                 ItemsSource="{x:Bind Navigation.Menu, Mode=OneWay}"
-                                ItemContainerStyle="{StaticResource NavigationMenuContainerStyle}"
                                 ItemTemplate="{StaticResource CategoryItemTemplate}">
                                 <controls:NavigationListView.Resources>
                                     <SolidColorBrush x:Key="ListViewItemBackgroundSelected" Color="{ThemeResource SystemListMediumColor}" />

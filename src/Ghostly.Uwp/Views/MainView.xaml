@@ -14,7 +14,10 @@
     xmlns:strings="using:Ghostly.Uwp.Strings"
     mc:Ignorable="d"
     NavigationCacheMode="Enabled"
-    Loaded="Page_Loaded">
+    Loaded="Page_Loaded"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+ muxc:BackdropMaterial.ApplyToRootOrPageBackground="True"
+    >
 
     <Page.Resources>
         <ResourceDictionary>
